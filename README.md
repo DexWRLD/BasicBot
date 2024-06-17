@@ -10,6 +10,7 @@ BasicBot is a versatile and user-friendly Discord bot designed to enhance your s
 - Interactive games like mute roulette
 - Hug command with fun GIFs
 - Loot box system with inventory tracking
+- Change the color of a mentioned role to a random one (Make sure to move the role above the required roles and to have permissions)
 
 ## Installation
 
@@ -50,6 +51,7 @@ python main.py
 - `?hug <@user>`: Sends a hug to the mentioned user.
 - `?lootbox`: Open a loot box and get a random item.
 - `?inventory`: Show your inventory of items.
+- `rolenamecolor <@role>`: Changes a role's color to a random one.
 
 ## Contributing
 

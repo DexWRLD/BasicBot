@@ -18,6 +18,7 @@ def help_command():
     - `hug <@user>`: Sends a hug to the mentioned user.
     - `?lootbox`: Open a loot box and get a random item.
     - `?inventory`: Show your inventory of items.
+    - `rolenamecolor <@role>`: Changes a role's color to a random one.
     """
     return help_text
 
@@ -127,6 +128,28 @@ def get_inventory(user: str) -> str:
 
     return inventory_message
 
+async def rolenamecolor_command(message: discord.Message, role_mention: str) -> str:
+    """Changes a role's color to a random one."""
+    # Check if the user has the serverMod role
+    if not message.author.guild_permissions.administrator:
+        return "You don't have permission to use this command."
+
+    # Extract the role ID from the mention
+    role_id = int(role_mention[3:-1].replace("&", "").replace(" ", ""))  # Remove '&' and spaces before converting to int
+
+    # Get the role
+    role = discord.utils.get(message.guild.roles, id=role_id)
+    if role is None:
+        return f"The role `{role_mention}` doesn't exist."
+
+    # Generate a random color
+    random_color = discord.Color(random.randint(0, 0xFFFFFF))
+
+    # Change the role's color
+    await role.edit(color=random_color)
+
+    return f"The color of the role `{role.name}` has been changed."
+
 COMMANDS = {
     'help': help_command,
     'dice': dice_command,
@@ -136,6 +159,7 @@ COMMANDS = {
     'hug': hug_command,
     'lootbox': lootbox_command,
     'inventory': get_inventory,
+    'rolenamecolor': rolenamecolor_command,
 }
 
 LOOTBOX_CHOICES = [
@@ -172,6 +196,8 @@ async def get_response(user: str, user_input: str, message: discord.Message = No
             return command_func(user)
         elif command == 'inventory':
             return command_func(user)
+        elif command == 'rolenamecolor':
+            return await command_func(message, ' '.join(args))
         else:
             return command_func()
     else:
