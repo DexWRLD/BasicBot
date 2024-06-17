@@ -1,21 +1,60 @@
 # BasicBot
 
-BasicBot is a versatile and user-friendly Discord bot designed to enhance your server's experience with fun and useful commands. It offers a range of features including dice rolls, 8ball responses, suggestion recording, and interactive games like mute roulette.
+BasicBot is a versatile and user-friendly Discord bot designed to enhance your server's experience with fun and useful commands.
 
 ## Features
 
-- `?help`: Shows a list of available commands.
-- `?dice`: Rolls a dice and returns a number between 1 and 6.
-- `?8ball`: Returns a random message.
-- `?suggest <your suggestion>`: Records your suggestion.
-- `?muteroulette <number>`: Starts a mute roulette game.
-- `?hug <@user>`: Sends a hug to the mentioned user.
-- `?lootbox`: Opens a loot box and gives a random item.
-- `?inventory`: Shows your inventory of items.
+- Dice rolls
+- 8ball responses
+- Suggestion recording
+- Interactive games like mute roulette
+- Hug command with fun GIFs
+- Loot box system with inventory tracking
 
 ## Installation
 
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/BasicBot.git
+   ```
+   git clone https://github.com/your-github-username/BasicBot.git
+   ```
+
+2. Navigate to the project directory:
+   ```
    cd BasicBot
+   ```
+
+3. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Create a `.env` file in the root directory and add your Discord token:
+   ```
+   Discord_Token=YOUR_DISCORD_TOKEN
+   ```
+
+## Usage
+
+Run the bot:
+```
+python main.py
+```
+
+## Commands
+
+- `?help`: Shows the help message with all available commands.
+- `?dice`: Returns a random number between 1 and 6.
+- `?8ball`: Returns a random message.
+- `?suggest <your suggestion>`: Records your suggestion.
+- `?muteroulette <number>`: Starts a mute roulette game.
+- `?hug <@user>`: Sends a hug to the mentioned user.
+- `?lootbox`: Open a loot box and get a random item.
+- `?inventory`: Show your inventory of items.
+
+## Contributing
+
+Feel free to open issues or submit pull requests if you have any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License.
