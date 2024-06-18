@@ -1,3 +1,4 @@
+
 # BasicBot
 
 BasicBot is a versatile and user-friendly Discord bot designed to enhance your server's experience with fun and useful commands.
@@ -11,6 +12,7 @@ BasicBot is a versatile and user-friendly Discord bot designed to enhance your s
 - Hug command with fun GIFs
 - Loot box system with inventory tracking
 - Change the color of a mentioned role to a random one (Make sure to move the role above the required roles and to have permissions)
+- An ID command that gives your or a mentioned users ID
 
 ## Installation
 
@@ -52,6 +54,7 @@ python main.py
 - `?lootbox`: Open a loot box and get a random item.
 - `?inventory`: Show your inventory of items.
 - `rolenamecolor <@role>`: Changes a role's color to a random one.
+- `id <@user>`: Returns the ID of the mentioned user. If no user is mentioned, returns your ID.
 
 ## Contributing
 
